@@ -24,7 +24,7 @@ namespace ConfigurationSample
             services.AddMvc();
 
             services.Configure<MyOptions>(Configuration.GetSection("MyOptions"));
-            services.AddMyModule();
+            services.AddTransient<IMyInterface, MyClass>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
