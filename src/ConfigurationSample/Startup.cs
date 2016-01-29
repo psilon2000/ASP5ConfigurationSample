@@ -12,9 +12,7 @@ namespace ConfigurationSample
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("config.json")
-                .AddJsonFile($"config.{env.EnvironmentName}.json", true) 
-                .AddEnvironmentVariables();
+                .AddJsonFile("config.json");
 
             Configuration = builder.Build();
         }
